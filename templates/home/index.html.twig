@@ -27,27 +27,16 @@
         <h2>Nos spétialités antillaises</h2>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <div class="features-item">
-            <h3>Lorem ipsum dolor</h3>
-            <img src="img/specials/1.jpg" class="img-responsive" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo.</p>
+      {% for plat in plats %}
+          <div class="col-xs-12 col-sm-4">
+            <div class="features-item">
+              <h3>{{ plat.Nom }}</h3>
+              <img src="{{ asset('uploads/' ~ plat.Photo) }}" class="img-responsive" alt="image">
+              <p>{{ plat.Description }}</p>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="features-item">
-            <h3>Consectetur adipiscing</h3>
-            <img src="img/specials/2.jpg" class="img-responsive" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo.</p>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="features-item">
-            <h3>Duis sed dapibus</h3>
-            <img src="img/specials/3.jpg" class="img-responsive" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo.</p>
-          </div>
-        </div>
+        {% endfor %}
+
       </div>
     </div>
   </div>

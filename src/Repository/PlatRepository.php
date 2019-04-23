@@ -47,4 +47,16 @@ class PlatRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    // Permet d'afficher seulement les 3 derniers plat enregistré dans la base de donnée
+    public function plat_accueil()
+    {
+        return $this->createQueryBuilder('p')
+            ->setMaxResults(3)
+            ->orderBy('p.id', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 }
