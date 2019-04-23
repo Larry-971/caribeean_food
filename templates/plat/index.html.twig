@@ -1,0 +1,47 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Plat index{% endblock %}
+
+{% block body %}
+    <h1>Plat index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                {# <th>Photo</th> #}
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Publication</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for plat in plats %}
+            <tr>
+                <td>{{ plat.id }}</td>
+                <td>{{ plat.Nom }}</td>
+                {# <td><img src="{{ asset('uploads/' ~ plat.Photo) }}" alt="image" width="150" height="100" > </td> #}
+                <td>{{ plat.Description }}</td>
+                <td>{{ plat.Prix }}</td>
+                <td>{{ plat.Publication }}</td>
+                <td>
+                    <a href="{{ path('show_plat', {'id': plat.id}) }}">show</a>
+                    {# Apparait si connecté si ROLE_ADMIN #}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('edit_plat', {'id': plat.id}) }}">edit</a>
+                    {% endif %}
+                
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('new_plat') }}">Create new</a>
+{% endblock %}
