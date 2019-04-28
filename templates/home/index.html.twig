@@ -31,7 +31,7 @@
           <div class="col-xs-12 col-sm-4">
             <div class="features-item">
               <h3>{{ plat.Nom }}</h3>
-              <img src="{{ asset('uploads/' ~ plat.Photo) }}" class="img-responsive" alt="image">
+              <img src="{{ asset('uploads/'~ plat.Photo) }}" class="img-responsive" alt="image">
               <p>{{ plat.Description }}</p>
             </div>
           </div>
@@ -41,21 +41,29 @@
     </div>
   </div>
 
-  <!-- Team Section -->
+  <!-- horraire Section -->
   <div id="team">
     <div class="container">
       <div id="row">
         <div class="col-md-6">
           <div class="col-md-10 col-md-offset-1">
             <div class="section-title">
-              <h2>Meet Our Chef</h2>
+              <h2>Nos horraires</h2>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+            <h4>Venez dégustez vos plat préférés</h4>
+            <ul>
+              <li>Lundi : FERME</li>
+              <li>Mardi : De 11h à 14h30 puis De 18h00 à 22h30</li>
+              <li>Mercredi : De 11h à 14h30 puis De 18h00 à 22h30</li>
+              <li>Jeudi : De 11h à 14h30 puis De 18h00 à 22h30</li>
+              <li>Vendredi : De 11h à 14h30 puis De 18h00 à 22h30</li>
+              <li>Samedi : De 11h à 14h30 puis De 18h00 à 23h00</li>
+              <li>Dimanche : De 11h à 14h30 puis De 18h00 à 23h00</li>
+            </ul>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="team-img"><img src="img/chef.jpg" alt="..."></div>
+          <div class="team-img"><img src="{{ asset('\img/horraire.jpg') }}" alt="horraire_ouverture"></div>
         </div>
       </div>
     </div>

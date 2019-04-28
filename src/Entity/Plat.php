@@ -25,7 +25,7 @@ class Plat
 
     /**
      * @ORM\Column(type="string", length=350)
-     * @Assert\Image()
+     * @Assert\Image( mimeTypes = {"image/jpg", "image/jpeg", "image/gif", "image/png"})
      */
     private $Photo;
 

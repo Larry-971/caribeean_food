@@ -42,7 +42,7 @@ class PlatController extends AbstractController
                 //Récupérer le nom du fichier
             $fileName = $this->generateUniqueFileName().'.'. $file->guessExtension();
                 //Déplace le nom du fichier dans notre dossier
-            $file->move($this->getParameter("uploads", $fileName));
+            $file->move($this->getParameter("uploads"), $fileName);
             $plat->setPhoto($fileName);
 
             $entityManager->persist($plat);
@@ -87,6 +87,15 @@ class PlatController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            //Méthode similaire pour maj de la photo
+            $file = $form->get("Photo")->getData(); //Nom de la propriété à exploiter
+                //Récupérer le nom du fichier
+            $fileName = $this->generateUniqueFileName().'.'. $file->guessExtension();
+                //Déplace le nom du fichier dans notre dossier
+            $file->move($this->getParameter('uploads', $fileName));
+            $plat->setPhoto($fileName);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('index_plat', [
