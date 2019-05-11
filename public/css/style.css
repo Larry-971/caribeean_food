@@ -92,8 +92,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	transition: all 0.8s;
 }
 #menu.navbar-default {
-	background-color: rgba(248, 248, 248, 0);
-	border-color: rgba(231, 231, 231, 0);
+	background-color: #d43031;
+	border-color:#d43031;
 }
 #menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
@@ -106,10 +106,10 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	margin: 0 40px 0 40px;
 }
 #menu.navbar-default .navbar-nav > li > a:hover {
-	color: #d43031;
+	color: #f7a934;
 }
 .on {
-	background-color: #262626 !important;
+	background-color: #d43031 !important;
 	padding: 0 !important;
 	padding: 10px 0 !important;
 }
@@ -168,7 +168,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	display: table;
 	width: 100%;
 	padding: 0;
-	background: url(../img/intro-bg.jpg) center center no-repeat;
+	background: url(../img/img-fond.jpg) center center no-repeat;
 	background-color: #e5e5e5;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -176,7 +176,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	-o-background-size: cover;
 }
 .intro .overlay {
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.1);
 }
 .intro h1 {
 	font-family: 'Rochester', cursive;
@@ -202,7 +202,7 @@ header .intro-text {
 }
 /* Features Section */
 #features {
-	padding: 120px 0;
+	padding: 50px 0;
 }
 #features .features-item {
 	margin: 0 20px;
@@ -223,6 +223,10 @@ header .intro-text {
 #features p {
 	line-height: 24px;
 	margin: 15px 0 30px;
+}
+.btn-danger{
+	background-color: #f7a934;
+    border-color: #f7a934;
 }
 /* About Section */
 #about {
@@ -251,8 +255,7 @@ header .intro-text {
 	padding: 100px 0 60px 0;
 }
 #restaurant-menu img {
-	width: 300px;
-	box-shadow: 15px 0 #a7c44c;
+	width: 270px;
 }
 #restaurant-menu h3 {
 	padding: 10px 0;
@@ -301,7 +304,19 @@ header .intro-text {
 }
 /* Team Section */
 #team {
-	padding: 120px 0;
+	padding: 80px 0;
+	background-image: url(../img/plat_salade.jpg);
+	background-size: cover;
+	color: white;
+}
+.text-center{
+	margin-top: 30px;
+	color: black;
+}
+/* button */
+.btn-danger{
+	border-radius: 45%;
+	line-height: 3;
 }
 #team h2::after {
 	bottom: 0;
@@ -406,8 +421,8 @@ color: #999;
 }
 /* Footer Section*/
 #footer {
-	background: #262626;
-	padding: 40px 0 20px 0;
+	background: #d43031;
+	;
 }
 #footer .social {
 	margin-top: -5px;
@@ -420,15 +435,15 @@ color: #999;
 #footer .social i.fa {
 	font-size: 24px;
 	padding: 4px;
-	color: #888;
+	color: #eee;
 	transition: all 0.3s;
 }
 #footer .social i.fa:hover {
-	color: #eee;
+	color: #BF9929;
 }
 #footer p {
 	font-size: 14px;
-	color: #666;
+	color: white;
 }
 #footer a {
 	color: #999;

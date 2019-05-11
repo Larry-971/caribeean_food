@@ -14,6 +14,7 @@ class HomeController extends Controller
      */
     public function index(PlatRepository $platRepository): Response
     {
+        //Utilisation du service plat_accueil() pour afficher mes données
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController', 'plats' => $platRepository->plat_accueil(),
         ]);
@@ -22,8 +23,11 @@ class HomeController extends Controller
     /**
      * @Route("/carte", name="carte")
      */
-    public function menu(){
-        return $this->render('home/carte.html.twig');
+    public function menu(PlatRepository $platRepository): Response
+    {
+        return $this->render('home/carte.html.twig', [
+            'controller_name' => 'HomeController', 'plats' => $platRepository->plat_accueil(),
+        ]);
     }
 
     /**
@@ -38,5 +42,12 @@ class HomeController extends Controller
      */
     public function contact(){
         return $this->render('home/contact.html.twig');
+    }
+
+    /**
+     * @Route("/reservation", name="reservation")
+     */
+    public function reservation(){
+        return $this->render('home/reservation.html.twig');
     }
 }

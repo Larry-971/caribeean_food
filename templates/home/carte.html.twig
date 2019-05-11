@@ -11,33 +11,21 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <div class="menu-section">
-            <h2 class="menu-section-title">Breakfast & Starters</h2>
-            <div class="menu-item">
-              <div class="menu-item-name">Tortellini Skewers</div>
-              <div class="menu-item-price"> $9 </div>
-              <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-name">Fried Ravioli</div>
-              <div class="menu-item-price"> $7 </div>
-              <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-name">Wild Mushroom Arancini</div>
-              <div class="menu-item-price"> $9 </div>
-              <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-name">Mozzarella Sticks</div>
-              <div class="menu-item-price"> $10 </div>
-              <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
-            </div>
-          </div>
+          <h2 class="menu-section-title">Plat</h2>
+            {% for plat in plats %}
+              <div class="menu-section">
+                <div class="menu-item">
+                  <div class="menu-item-name">{{ plat.Nom }}</div>
+                  <div class="menu-item-price" style="color : #d43031" > {{ plat.Prix }} € </div>
+                  <img src="{{ asset('uploads/'~ plat.Photo) }}" class="rounded mx-auto d-block" alt="plat" width="200px" heigth="auto">
+                  <div class="menu-item-description"> {{ plat.Description }} </div>
+                </div>
+              </div>
+            {% endfor %}
         </div>
         <div class="col-xs-12 col-sm-6">
           <div class="menu-section">
-            <h2 class="menu-section-title">Main Course</h2>
+            <h2 class="menu-section-title">Boissons</h2>
             <div class="menu-item">
               <div class="menu-item-name">Roast Stuffed Chicken</div>
               <div class="menu-item-price"> $18 </div>

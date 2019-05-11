@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation{% endblock %}
+
+{% block body %}
+    <div class="container" style="padding:100px 0 60px 0;">
+        <div class="bg-reservation"><div>
+        <h1>Reservation</h1>
+        <form method="POST" action="">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" placeholder="Entrez votre nom" id="nom" name="nom"  required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" class="form-control" placeholder="Entrez votre prenom" id="prenom" name="prenom" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" placeholder="Entrez votre email" id="email" name="email"  required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" class="form-control" placeholder="Entrez votre numéro de téléphone" id="prenom" name="phone"  required>
+                </div>
+            </div>
+             <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control"id="date" name="date" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="heure">Heure</label>
+                    <input type="time" class="form-control" id="heure" name="heure"  required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="nombre_convive">Nombre de convives</label>
+                    <select name="convive" required>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-8">
+                    <label>Message</label>
+                    <textarea style="resize:none;" class="form-control" rows="5" placeholder="Table en terrasse, table ronde, etc..."></textarea>
+                </div>
+            </div>
+            <a class="btn btn-success" type="submit" name="reserver">Réseverver</a>
+        </form>
+    </div>
+{% endblock %}

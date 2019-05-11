@@ -11,7 +11,7 @@
         <div class="container">
           <div class="row">
             <div class="intro-text">
-              <h1>Caribbean Food</h1>
+              <h1>Bienvenue et...bon appétit !!!</h1>
               <p>Reservez au : 09 45 12 87 35</p>
               <span>Venez découvrir nos plats tous divers et variés qui vous ferons voyager vers différentes saveurs</span>
             </div>
@@ -20,6 +20,18 @@
       </div>
     </div>
   </header>
+  <div class="container">
+    <div class="row">
+      <h1>Caribbean Food</h1>
+      <div class="col-md-6">
+        <img src="../img/resto.jpg" alt="image_restaurant" width="400px" heigth="350px">
+      </div>
+      <div class="col-md-4" style="text-align: center;">
+        <p class="text-center">Le Caribéen est un concept original et innovant qui marie le fast-food et les saveurs des caraïbes. Nos spécialités sont les bokits et les agoulous. </p>
+         <a class="btn btn-danger" href="{{ path('a_propos') }}" role="button">Nous connaître</a>
+      </div>
+    </div>
+  </div>
   <!-- Features Section -->
   <div id="features" class="text-center">
     <div class="container">
@@ -27,7 +39,7 @@
         <h2>Nos spétialités antillaises</h2>
       </div>
       <div class="row">
-      {% for plat in plats %}
+        {% for plat in plats %}
           <div class="col-xs-12 col-sm-4">
             <div class="features-item">
               <h3>{{ plat.Nom }}</h3>
@@ -36,7 +48,21 @@
             </div>
           </div>
         {% endfor %}
+      </div>
 
+      <div class="section-title">
+        <h2>Rafraichissez-vous avec des boissons exotique</h2>
+      </div>
+      <div class="row">
+        {% for plat in plats %}
+          <div class="col-xs-12 col-sm-4">
+            <div class="features-item">
+              <h3>{{ plat.Nom }}</h3>
+              <img src="{{ asset('uploads/'~ plat.Photo) }}" class="img-responsive" alt="image">
+              <p>{{ plat.Description }}</p>
+            </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -48,9 +74,9 @@
         <div class="col-md-6">
           <div class="col-md-10 col-md-offset-1">
             <div class="section-title">
-              <h2>Nos horraires</h2>
+              <h2 style="color:white;">Nos horraires</h2>
             </div>
-            <h4>Venez dégustez vos plat préférés</h4>
+            <h4 style="color:white;">Venez dégustez vos plat préférés</h4>
             <ul>
               <li>Lundi : FERME</li>
               <li>Mardi : De 11h à 14h30 puis De 18h00 à 22h30</li>
@@ -62,8 +88,8 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="team-img"><img src="{{ asset('\img/horraire.jpg') }}" alt="horraire_ouverture"></div>
+        <div class="col-md-6" style="line-height: 44;">
+          <a class="btn btn-danger" href="{{ path('carte') }}" role="button">Voir la carte</a>
         </div>
       </div>
     </div>
