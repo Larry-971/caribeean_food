@@ -1,0 +1,18 @@
+{% extends 'base_back.html.twig' %}
+
+{% block title %}Informations sur le dessert{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('index_dessert') }}"><i class="fas fa-arrow-circle-left fa-3x"></i></a> 
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="text-center">{{ dessert.Nom }}</h1>
+        <img  class="img-thumbnail mx-auto d-block" src="{{ asset('uploads/' ~ dessert.Photo) }} " alt="image" width="300" height="200" > 
+        <br>
+        <p class="text-center">{{ dessert.Description }}</p>
+        <p class="text-center">{{ dessert.Prix }} €</p>
+    </div>
+    <a class="btn btn-primary btn-block" href="{{ path('edit_dessert', {'id': dessert.id}) }}">Modifier</a>   
+
+    {{ include('dessert/_delete_form.html.twig') }}
+{% endblock %}

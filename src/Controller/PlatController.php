@@ -48,6 +48,9 @@ class PlatController extends AbstractController
             $entityManager->persist($plat);
             $entityManager->flush();
 
+            //Message flash pour notification
+            $this->addFlash('success', "Le nouveau plat à été ajouté avec succès !");
+
             return $this->redirectToRoute('index_plat');
         }
 
@@ -119,6 +122,9 @@ class PlatController extends AbstractController
             $entityManager->remove($plat);
             $entityManager->flush();
         }
+
+        //Message flash pour notification
+        $this->addFlash('suppression', "Le plat à été supprimé avec succès !");
 
         return $this->redirectToRoute('index_plat');
     }

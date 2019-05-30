@@ -47,4 +47,14 @@ class DessertRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function dessert_accueil()
+    {
+        return $this->createQueryBuilder('d')
+            ->setMaxResults(3)
+            ->orderBy('d.id', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

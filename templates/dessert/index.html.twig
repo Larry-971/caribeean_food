@@ -1,9 +1,8 @@
 {% extends 'base_back.html.twig' %}
 
-{% block title %}Liste des plats{% endblock %}
+{% block title %}Liste des dessert{% endblock %}
 
 {% block body %}
-
 
     {# Message flash #}
     {% for message in app.flashes('success') %}  
@@ -24,15 +23,14 @@
         </div>
     {% endfor %}
 
-
-    <h1>Liste des plats du restaurant</h1>
-
+    <h1>Liste des desserts du restaurant</h1>
+    <a class="btn btn-outline-success" href="{{ path('new_dessert') }}">Nouveau dessert</a>
+    <br><br>
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                {# <th>Photo</th> #}
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Publication</th>
@@ -40,20 +38,16 @@
             </tr>
         </thead>
         <tbody>
-        {% for plat in plats %}
+        {% for dessert in desserts %}
             <tr>
-                <td>{{ plat.id }}</td>
-                <td>{{ plat.Nom }}</td>
-                <td>{{ plat.Description }}</td>
-                <td>{{ plat.Prix }}</td>
-                <td>{{ plat.Publication }}</td>
+                <td>{{ dessert.id }}</td>
+                <td>{{ dessert.Nom }}</td>
+                <td>{{ dessert.Description }}</td>
+                <td>{{ dessert.Prix }} €</td>
+                <td>{{ dessert.Publication }}</td>
                 <td>
-                    <a href="{{ path('show_plat', {'id': plat.id}) }}">show</a>
-                    {# Apparait si connecté si ROLE_ADMIN #}
-                    {# {% if is_granted('ROLE_ADMIN') %} #}
-                        <a href="{{ path('edit_plat', {'id': plat.id}) }}">edit</a>
-                    {# {% endif %} #}
-                
+                    <a class="btn btn-info" href="{{ path('show_dessert', {'id': dessert.id}) }}">Voir</a>
+                    <a class="btn btn-secondary" href="{{ path('edit_dessert', {'id': dessert.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -64,8 +58,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('new_plat') }}">Create new</a>
-
-    <a href="/admin/dessert">Voir les déssert</a>
+    <a class="btn btn-primary" href="/admin">Voir liste des plats</a>
 
 {% endblock %}

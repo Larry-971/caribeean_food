@@ -250,9 +250,11 @@ header .intro-text {
 	line-height: 24px;
 	margin: 15px 0 30px;
 }
-/* Menu Section */
-#restaurant-menu {
+/* Page Carte */
+
+#bg-carte {
 	padding: 100px 0 60px 0;
+	background: url(../img/font-carte.jpg)  no-repeat;
 }
 #restaurant-menu img {
 	width: 270px;
@@ -330,10 +332,10 @@ header .intro-text {
 	display: inline-block;
 	position: relative;
 }
-/* Contact Section */
+/* Page Contact */
 #contact {
 	padding: 100px 0;
-	background: #333;
+	background: rgba(253, 250, 74, 0.404);
 }
 #contact .contact-item p {
 	font-size: 15px;
@@ -419,7 +421,7 @@ color: #999;
 	margin-bottom: 6px;
 	display: inline-block;
 }
-/* Footer Section*/
+/* Section Footer*/
 #footer {
 	background: #d43031;
 	;

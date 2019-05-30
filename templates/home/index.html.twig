@@ -51,15 +51,15 @@
       </div>
 
       <div class="section-title">
-        <h2>Rafraichissez-vous avec des boissons exotique</h2>
+        <h2>Découvrez nos déssert au saveurs des caraïbes</h2>
       </div>
       <div class="row">
-        {% for plat in plats %}
+        {% for dessert in desserts %}
           <div class="col-xs-12 col-sm-4">
             <div class="features-item">
-              <h3>{{ plat.Nom }}</h3>
-              <img src="{{ asset('uploads/'~ plat.Photo) }}" class="img-responsive" alt="image">
-              <p>{{ plat.Description }}</p>
+              <h3>{{ dessert.Nom }}</h3>
+              <img src="{{ asset('uploads/'~ dessert.Photo) }}" class="img-responsive" alt="image">
+              <p>{{ dessert.Description }}</p>
             </div>
           </div>
         {% endfor %}
