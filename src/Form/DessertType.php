@@ -15,7 +15,7 @@ class DessertType extends AbstractType
     {
         $builder
             ->add('Nom')
-            ->add('Photo', FileType::class, ['data_class' => null])
+            ->add('Photo', FileType::class, ['data_class' => null,'required' => false, 'mapped' => false])
             ->add('Description')
             ->add('Prix')
             ->add('Publication')

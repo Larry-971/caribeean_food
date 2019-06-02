@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
+use App\Form\ContactType;
 use App\Repository\PlatRepository;
 use App\Repository\DessertRepository;
+use App\Notification\ContactNotification;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -44,8 +48,20 @@ class HomeController extends Controller
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(){
-        return $this->render('home/contact.html.twig');
+    public function contact(Request $request, ContactNotification $notification): Response{
+        
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $notification->notify($contact); //Permet de traiter l'envoi d'email
+            
+            $this->addFlash("success", "Votre email à bien été envoyé");
+            return $this->redirecToRoute('home/contact.html.twig', ["form"=>$form->createView()]);
+        }
+
+        return $this->render('home/contact.html.twig', ["form"=>$form->createView()]);
     }
 
     /**
@@ -53,5 +69,12 @@ class HomeController extends Controller
      */
     public function reservation(){
         return $this->render('home/reservation.html.twig');
+    }
+
+    /**
+     * @Route("/recrutement", name="recrutement")
+     */
+    public function recrutement(){
+        return $this->render("home/recrutement.html.twig");
     }
 }

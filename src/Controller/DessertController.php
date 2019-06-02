@@ -79,16 +79,19 @@ class DessertController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
+            
              //Pour le telechargement de fichier et crypté les fichiers télécharger
              $file = $form->get("Photo")->getData(); //Nom de la propriété à exploiter
              //Récupérer le nom du fichier
             $fileName = $this->generateUniqueFileName().'.'. $file->guessExtension();
                 //Déplace le nom du fichier dans notre dossier
             $file->move($this->getParameter("uploads"), $fileName);
-            $plat->setPhoto($fileName);
+            $dessert->setPhoto($fileName);
 
             $this->getDoctrine()->getManager()->flush();
+
+            //Message flash pour notification
+            $this->addFlash('success', "Le dessert à été modifié avec succès !");
 
             return $this->redirectToRoute('index_dessert', [
                 'id' => $dessert->getId(),

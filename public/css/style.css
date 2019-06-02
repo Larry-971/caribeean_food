@@ -1,5 +1,5 @@
 body, html {
-	font-family: 'Open Sans', serif;
+	font-family: arial ,'Open Sans', serif;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 	color: #777;
@@ -8,7 +8,7 @@ body, html {
 	height: 100% !important;
 }
 h1, h2, h3, h4 {
-	font-family: 'Raleway', sans-serif;
+	font-family: cursive;
 }
 h2 {
 	font-weight: 400;
@@ -242,7 +242,7 @@ header .intro-text {
 	padding: 80px 0;
 }
 #about .about-img {
-	background: #444 url(../img/gallery-bg.jpg) center center no-repeat;
+	background: #444 url(../img/resto_a_propos.jpg) center center no-repeat;
 	background-size: cover;
 	height: 570px;
 }
@@ -304,8 +304,8 @@ header .intro-text {
 #gallery .gallery-item {
 	margin: 0 -15px;
 }
-/* Team Section */
-#team {
+/* Horraire Section */
+#horraire {
 	padding: 80px 0;
 	background-image: url(../img/plat_salade.jpg);
 	background-size: cover;
@@ -320,26 +320,25 @@ header .intro-text {
 	border-radius: 45%;
 	line-height: 3;
 }
-#team h2::after {
+#horraire h2::after {
 	bottom: 0;
 	margin-left: 0;
 	left: 0;
 }
-#team img {
+#horraire img {
 	max-width: 550px;
 }
-#team .team-img {
+#horraire .horraire-img {
 	display: inline-block;
 	position: relative;
 }
 /* Page Contact */
 #contact {
 	padding: 100px 0;
-	background: rgba(253, 250, 74, 0.404);
 }
 #contact .contact-item p {
 	font-size: 15px;
-	color: #777;
+	color: black;
 }
 #contact .section-title {
 	margin-top: 60px;
@@ -370,57 +369,7 @@ header .intro-text {
 	color: #cc0033;
 	text-align: left;
 }
-label {
-	font-size: 12px;
-	font-weight: 400;
-	font-family: 'Open Sans', sans-serif;
-	float: left;
-}
-#contact .form-control {
-	display: block;
-	width: 100%;
-	padding: 6px 12px;
-	font-size: 16px;
-	line-height: 1.42857143;
-	color: #ccc;
-	background-color: rgba(255,255,255,.2);
-	background-image: none;
-	border: 0;
-	border-radius: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	-webkit-transition: none;
-	-o-transition: none;
-	transition: none;
-}
-#contact .form-control:focus {
-	border-color: #999;
-	outline: 0;
-	-webkit-box-shadow: transparent;
-	box-shadow: transparent;
-}
-.form-control::-webkit-input-placeholder {
-color: #999;
-}
-.form-control:-moz-placeholder {
-color: #999;
-}
-.form-control::-moz-placeholder {
-color: #999;
-}
-.form-control:-ms-input-placeholder {
-color: #999;
-}
-#contact .contact-item {
-	margin: 20px 0 40px 0;
-}
-#contact .contact-item span {
-	font-weight: 400;
-	color: #aaa;
-	text-transform: uppercase;
-	margin-bottom: 6px;
-	display: inline-block;
-}
+
 /* Section Footer*/
 #footer {
 	background: #d43031;
@@ -453,3 +402,19 @@ color: #999;
 #footer a:hover {
 	color: #eee;
 }
+
+/* Formulaire de connexion (Back-end) */
+
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+}
+
