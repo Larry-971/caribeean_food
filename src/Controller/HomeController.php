@@ -77,4 +77,11 @@ class HomeController extends Controller
     public function recrutement(){
         return $this->render("home/recrutement.html.twig");
     }
+
+    /**
+     * @Route("/mentions_legales", name="mentions_legales")
+     */
+    public function mentions_legale(){
+        return $this->render("home/mentions_legales.html.twig");
+    }
 }
