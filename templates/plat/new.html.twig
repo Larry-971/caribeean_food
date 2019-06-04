@@ -1,11 +1,20 @@
 {% extends 'base_back.html.twig' %}
 
-{% block title %}New Plat{% endblock %}
+{% block title %}Nouveau plat{% endblock %}
 
 {% block body %}
-    <h1>Create new Plat</h1>
+    <a href="{{ path('index_plat') }}"><i class="fas fa-arrow-circle-left fa-3x"></i></a> 
+    <h1 class="text-center">Ajout d'un nouveau plat</h1>
 
     {{ include('plat/_form.html.twig') }}
 
-    <a href="{{ path('index_plat') }}">back to list</a>
+<style>
+
+body{
+    background: url(../../img/plat/fond_plat.png);
+    background-color: #f6f6f6;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+</style>
 {% endblock %}

@@ -10,10 +10,13 @@ body, html {
 h1, h2, h3, h4 {
 	font-family: cursive;
 }
+h1{
+	color:#d43031;
+}
 h2 {
 	font-weight: 400;
 	font-size: 38px;
-	color: #333;
+	color: #d43031;
 	text-transform: uppercase;
 	position: relative;
 	margin-top: 10px;
@@ -23,7 +26,7 @@ h2 {
 h2::after {
 	position: absolute;
 	content: "";
-	background: #d43031;
+	background: #BF9929;
 	height: 2px;
 	width: 70px;
 	bottom: 0;
@@ -91,9 +94,18 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	padding: 20px;
 	transition: all 0.8s;
 }
+/*Nav menu*/
 #menu.navbar-default {
-	background-color: #d43031;
-	border-color:#d43031;
+	background-color: #BF9929;
+	border-color:#BF9929;
+}
+/*Logo*/
+.nav > li > a > img {
+    max-width: none;
+    position: relative;
+    bottom: 58px;
+	right: 50px;
+	width: 130px;
 }
 #menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
@@ -106,10 +118,10 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	margin: 0 40px 0 40px;
 }
 #menu.navbar-default .navbar-nav > li > a:hover {
-	color: #f7a934;
+	color: #d43031;
 }
 .on {
-	background-color: #d43031 !important;
+	background-color: #BF9929 !important;
 	padding: 0 !important;
 	padding: 10px 0 !important;
 }
@@ -179,14 +191,14 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	background: rgba(0,0,0,0.1);
 }
 .intro h1 {
-	font-family: 'Rochester', cursive;
+	font-family:  cursive;
 	color: #fff;
-	font-size: 10em;
-	font-weight: 400;
+	font-size: 7em;
+	font-weight: 300;
 	margin-top: 0;
 }
 .intro span {
-	color: #a7c44c;
+	color: #d43031;
 	font-weight: 600;
 }
 .intro p {
@@ -225,8 +237,8 @@ header .intro-text {
 	margin: 15px 0 30px;
 }
 .btn-danger{
-	background-color: #f7a934;
-    border-color: #f7a934;
+	background-color: #bf9929;
+    border-color: #bf9929;
 }
 /* About Section */
 #about {
@@ -273,7 +285,7 @@ header .intro-text {
 	font-size: 32px;
 	display: block;
 	font-weight: 400;
-	color: #444;
+	color: #d43031;
 	margin: 20px 0;
 	text-align: center;
 }
@@ -281,22 +293,12 @@ header .intro-text {
 	margin: 45px 0;
 	font-size: 18px;
 }
-#restaurant-menu .menu-item-name {
-	font-weight: 400;
-	font-size: 20px;
-	color: #444;
-	margin-bottom: 10px;
+
+/* Carte - Boisson */
+.gallery-item>p, .container-fluid>h2{
+	color: #d43031;
 }
-#restaurant-menu .menu-item-description {
-	font-size: 15px;
-	width: 85%;
-}
-#restaurant-menu .menu-item-price {
-	float: right;
-	font-weight: 400;
-	color: #555;
-	margin-top: -36px;
-}
+
 /* Gallery Section */
 #gallery {
 	padding: 0;
@@ -366,13 +368,13 @@ header .intro-text {
 	left: 50%;
 }
 #contact .text-danger {
-	color: #cc0033;
+	color: #d43031;
 	text-align: left;
 }
 
 /* Section Footer*/
 #footer {
-	background: #d43031;
+	background: #BF9929;
 	;
 }
 #footer .social {
@@ -386,7 +388,7 @@ header .intro-text {
 #footer .social i.fa {
 	font-size: 24px;
 	padding: 4px;
-	color: #eee;
+	color: #d43031;
 	transition: all 0.3s;
 }
 #footer .social i.fa:hover {
@@ -397,7 +399,7 @@ header .intro-text {
 	color: white;
 }
 #footer a {
-	color: #999;
+	color: #d43031;
 }
 #footer a:hover {
 	color: #eee;

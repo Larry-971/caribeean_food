@@ -48,20 +48,10 @@ class HomeController extends Controller
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(Request $request, ContactNotification $notification): Response{
+    public function contact(){
         
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
-            $notification->notify($contact); //Permet de traiter l'envoi d'email
-            
-            $this->addFlash("success", "Votre email à bien été envoyé");
-            return $this->redirecToRoute('home/contact.html.twig', ["form"=>$form->createView()]);
-        }
-
-        return $this->render('home/contact.html.twig', ["form"=>$form->createView()]);
+        return $this->render('home/contact.html.twig');
     }
 
     /**

@@ -3,41 +3,15 @@
 {% block title %}Plat{% endblock %}
 
 {% block body %}
-    <h1>Plat</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ plat.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ plat.Nom }}</td>
-            </tr>
-            <tr>
-                <th>Photo</th>
-                <td><img src="{{ asset('uploads/' ~ plat.Photo) }} " alt="image" width="150" height="100" > </td>
-
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ plat.Description }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ plat.Prix }}</td>
-            </tr>
-            <tr>
-                <th>Publication</th>
-                <td>{{ plat.Publication }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('index_plat') }}">back to list</a>
-
-    <a href="{{ path('edit_plat', {'id': plat.id}) }}">edit</a>
+    <a href="{{ path('index_plat') }}"><i class="fas fa-arrow-circle-left fa-3x"></i></a> 
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="text-center">{{ plat.Nom }}</h1>
+        <img  class="img-thumbnail mx-auto d-block" src="{{ asset('uploads/' ~ plat.Photo) }} " alt="image" width="300" height="200" > 
+        <br>
+        <p class="text-center">{{ plat.Description }}</p>
+        <p class="text-center">{{ plat.Prix }} €</p>
+    </div>
+    <a class="btn btn-primary btn-block" href="{{ path('edit_plat', {'id': plat.id}) }}">Modifier</a>   
 
     {{ include('plat/_delete_form.html.twig') }}
 {% endblock %}

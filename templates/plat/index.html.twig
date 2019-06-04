@@ -26,9 +26,11 @@
 
 
     <h1>Liste des plats du restaurant</h1>
+    <a class="btn btn-outline-success" href="{{ path('new_plat') }}">Nouveau plat</a>
+    <br><br>
 
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
@@ -48,10 +50,10 @@
                 <td>{{ plat.Prix }}</td>
                 <td>{{ plat.Publication }}</td>
                 <td>
-                    <a href="{{ path('show_plat', {'id': plat.id}) }}">show</a>
+                    <a class="btn btn-info" href="{{ path('show_plat', {'id': plat.id}) }}">Voir</a>
                     {# Apparait si connecté si ROLE_ADMIN #}
                     {# {% if is_granted('ROLE_ADMIN') %} #}
-                        <a href="{{ path('edit_plat', {'id': plat.id}) }}">edit</a>
+                        <a a class="btn btn-secondary" href="{{ path('edit_plat', {'id': plat.id}) }}">Modifier</a>
                     {# {% endif %} #}
                 
                 </td>
@@ -64,8 +66,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('new_plat') }}">Create new</a>
-
-    <a href="/admin/dessert">Voir les déssert</a>
+    <a class="btn btn-primary" href="/admin/dessert">Voir les déssert</a>
 
 {% endblock %}

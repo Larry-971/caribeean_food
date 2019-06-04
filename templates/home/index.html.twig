@@ -12,7 +12,7 @@
           <div class="row">
             <div class="intro-text">
               <h1>Bienvenue et...bon appétit !!!</h1>
-              <p>Reservez au : 09 45 12 87 35</p>
+              <p>Reservez au : 01 45 75 45 85</p>
               <span>Venez découvrir nos plats tous divers et variés qui vous ferons voyager vers différentes saveurs</span>
             </div>
           </div>
@@ -20,6 +20,7 @@
       </div>
     </div>
   </header>
+  <br>
   <div class="container">
     <div class="row">
       <h1>Caribbean Food</h1>
@@ -43,13 +44,13 @@
           <div class="col-xs-12 col-sm-4">
             <div class="features-item">
               <h3>{{ plat.Nom }}</h3>
-              <img src="{{ asset('uploads/'~ plat.Photo) }}" class="img-responsive" alt="image_plat">
+              <img src="{{ asset('uploads/'~ plat.Photo) }}" class="img-responsive" alt="image-plat" style="max-height:230px" max-width="320px">
               <p>{{ plat.Description }}</p>
             </div>
           </div>
         {% endfor %}
       </div>
-
+      <br><br>
       <div class="section-title">
         <h2>Découvrez nos déssert au saveurs des caraïbes</h2>
       </div>
@@ -58,7 +59,7 @@
           <div class="col-xs-12 col-sm-4">
             <div class="features-item">
               <h3>{{ dessert.Nom }}</h3>
-              <img src="{{ asset('uploads/'~ dessert.Photo) }}" class="img-responsive" alt="image">
+              <img src="{{ asset('uploads/'~ dessert.Photo) }}" class="img-responsive" alt="image-dessert" style="max-height:230px" max-width="320px">
               <p>{{ dessert.Description }}</p>
             </div>
           </div>
