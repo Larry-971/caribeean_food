@@ -2,7 +2,7 @@ body, html {
 	font-family: arial ,'Open Sans', serif;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
-	color: #777;
+	color: #000;
 	font-weight: 400;
 	width: 100% !important;
 	height: 100% !important;
@@ -240,7 +240,7 @@ header .intro-text {
 	background-color: #bf9929;
     border-color: #bf9929;
 }
-/* About Section */
+/*  Page A propos*/
 #about {
 	padding: 0;
 	background: #f6f6f6;
@@ -372,6 +372,24 @@ header .intro-text {
 	text-align: left;
 }
 
+/*Page Reservation*/
+#page-reservation{
+	color:black;
+	background: #80808061;
+	width: 70%;
+}
+#bg-reservation{
+	background-image: url(../img/fond-reservation.jpg);
+}
+span{
+	color:red;
+}
+#page-reservation>p>span{
+	color:red;
+}
+#formulaire-reservation>form{
+	margin-left: 20px;
+}
 /* Section Footer*/
 #footer {
 	background: #BF9929;
@@ -392,7 +410,7 @@ header .intro-text {
 	transition: all 0.3s;
 }
 #footer .social i.fa:hover {
-	color: #BF9929;
+	color: white;
 }
 #footer p {
 	font-size: 14px;
@@ -405,8 +423,8 @@ header .intro-text {
 	color: #eee;
 }
 
-/* Formulaire de connexion (Back-end) */
 
+/* Formulaire de connexion (Back-end) */
 
 .input-group-prepend span{
 width: 50px;
