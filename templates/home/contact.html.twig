@@ -10,7 +10,7 @@
         <h3>Reservation</h3>
         <div class="contact-item">
           <p>Appellez au</p>
-          <p>01 45 75 45 85</p>
+          <p>+33(0)1 45 75 45 85</p>
         </div>
       </div>
       <div class="col-md-4">
@@ -29,7 +29,7 @@
       </div>
     </div>
     
-    <div class="container">
+    <div class="container" id="content-form-contact">
       <div class="section-title text-center">
         <h3>Besoin de plus d'information ? Ecrivez-nous !</h3>
       </div>
@@ -43,8 +43,28 @@
     {% endfor %}
     
       {# Formulaire de contact #}
-      <div class="col-md-8 col-md-offset-2">
-        
+      <div class="col-md-8 col-md-offset-4">
+        <form method="POST">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label id="nom">Nom</label>
+              <input type="text" class="form-control" for="nom" name="nom">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label id="prenom">Prenom</label>
+              <input type="text" class="form-control" for="prenom" name="prenom">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label id="message">Message</label>
+              <textarea class="form-control" for="message" name="message" rows="5"></textarea>
+            </div>
+          </div>
+          <button style="position: relative; right: 25%;" class="btn btn-danger" type="submit" name="contacter">Contacter</button>
+        </form>
       </div> 
     </div>
   </div>

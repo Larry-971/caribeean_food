@@ -103,7 +103,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 .nav > li > a > img {
     max-width: none;
     position: relative;
-    bottom: 58px;
+    bottom: 49px;
 	right: 50px;
 	width: 130px;
 }
@@ -336,7 +336,15 @@ header .intro-text {
 }
 /* Page Contact */
 #contact {
-	padding: 100px 0;
+	padding: 100px 0;	
+}
+#contact>button{
+	position: relative;
+    right: 25%;
+}
+#content-form-contact{
+	background: #80808061;
+	background-image: url(../img/fond-contact.jpg);
 }
 #contact .contact-item p {
 	font-size: 15px;
@@ -354,13 +362,13 @@ header .intro-text {
 	text-transform: uppercase;
 	font-size: 18px;
 	font-weight: 400;
-	color: #aaa;
+	color: #d43031;
 	padding: 20px 0;
 }
 #contact h3::after {
 	position: absolute;
 	content: "";
-	background: #d43031;
+	background: #BF9929;
 	height: 2px;
 	width: 40px;
 	bottom: 0;
@@ -390,6 +398,7 @@ span{
 #formulaire-reservation>form{
 	margin-left: 20px;
 }
+
 /* Section Footer*/
 #footer {
 	background: #BF9929;
@@ -438,3 +447,7 @@ outline: 0 0 0 0  !important;
 box-shadow: 0 0 0 0 !important;
 }
 
+/*Textarea*/
+textarea {
+    resize: none;
+}
