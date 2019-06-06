@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+
 class HomeController extends Controller
 {
     /**
@@ -48,10 +49,21 @@ class HomeController extends Controller
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(){
-        
+    public function contact(Request $request):Response{
 
-        return $this->render('home/contact.html.twig');
+        /*Donnée du formulaire */
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $this->addFlash('success', 'Votre email à bien été envoyé');
+                $this->redirectToRoute('/contact');
+            }
+
+        return $this->render('home/contact.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**

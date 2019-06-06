@@ -25,8 +25,8 @@ class Dessert
     private $Nom;
 
     /**
-     * @ORM\Column(type="string", length=350)
-     * @Assert\Image( mimeTypes = {"image/jpg", "image/jpeg", "image/gif", "image/png"})
+     * @ORM\Column(type="string", length=350, nullable=true)
+     * @Assert\File( mimeTypes = {"image/jpg", "image/jpeg", "image/gif", "image/png"})
      */
     private $Photo;
 

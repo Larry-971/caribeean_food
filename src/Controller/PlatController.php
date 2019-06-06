@@ -85,7 +85,7 @@ class PlatController extends AbstractController
                 //Récupérer le nom du fichier
             $fileName = $this->generateUniqueFileName().'.'. $file->guessExtension();
                 //Déplace le nom du fichier dans notre dossier
-            $file->move($this->getParameter('uploads', $fileName));
+            $file->move($this->getParameter('uploads'), $fileName);
             $plat->setPhoto($fileName);
 
             $this->getDoctrine()->getManager()->flush();

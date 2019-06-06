@@ -15,7 +15,7 @@ class PlatType extends AbstractType
     {
         $builder
             ->add('Nom')
-            ->add('Photo', FileType::class, ['data_class' => null])
+            ->add('Photo', FileType::class, ['data_class' => null,])
             ->add('Description')
             ->add('Prix')
             ->add('Publication')

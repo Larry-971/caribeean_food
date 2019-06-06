@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\Dessert;
 use App\Form\DessertType;
 use App\Repository\DessertRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/")
@@ -75,21 +76,39 @@ class DessertController extends AbstractController
      */
     public function edit(Request $request, Dessert $dessert): Response
     {
+    
+        $photoActuel = $dessert->getPhoto();
+
+        if(!empty($photoActuel)){
+
+            $photoPath = ($this->getParameter('uploads') . DIRECTORY_SEPARATOR . $dessert->getPhoto());
+            //$dessert->setPhoto(new File($photoPath));
+        }
+
         $form = $this->createForm(DessertType::class, $dessert);
         $form->handleRequest($request);
 
+        dump($dessert);
+        
         if ($form->isSubmitted() && $form->isValid()) {
             
-             //Pour le telechargement de fichier et crypté les fichiers télécharger
-             $file = $form->get("Photo")->getData(); //Nom de la propriété à exploiter
-             //Récupérer le nom du fichier
-            $fileName = $this->generateUniqueFileName().'.'. $file->guessExtension();
+            $photo = $dessert->getPhoto();
+            
+            if(!is_null($photo)){
+                
+                //Pour le telechargement de fichier et crypté les fichiers télécharger
+                $file = $form->get("Photo")->getData(); //Nom de la propriété à exploiter
+                //Récupérer le nom du fichier
+                $fileName = $this->generateUniqueFileName().'.'. $file->guessExtension();
                 //Déplace le nom du fichier dans notre dossier
-            $file->move($this->getParameter("uploads"), $fileName);
-            $dessert->setPhoto($fileName);
+                $file->move($this->getParameter('uploads'), $fileName);
+                $dessert->setPhoto($fileName);
+            }else{
+                $dessert->setPhoto($photoActuel);
+            }
 
             $this->getDoctrine()->getManager()->flush();
-
+            
             //Message flash pour notification
             $this->addFlash('success', "Le dessert à été modifié avec succès !");
 
@@ -103,7 +122,6 @@ class DessertController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
 
     // Hash du nom de l'image par sécurité
     /**
