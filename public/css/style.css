@@ -456,6 +456,6 @@ textarea {
 }
 
 /*Erreur 403,404,500*/
-#content-404{
+#content-404, #content-erreur-general{
 	margin-top: 150px;
 }

@@ -1,1 +1,19 @@
-<h1>Page d'erreur 403 Retourné vers le site</h1>
+{% extends 'base-erreur.html.twig' %}
+
+{% block body %}
+    <div id="block-fond">
+        <div class="container">
+            <div id="content-404">
+                <h1 class="text-center text-dark">Oops ! Une erreur 403 à été détectée !</h1>
+                <a href="{{ path('home') }}" class="btn btn-danger">Revenir à l'accueil</a>
+            </div>
+        </div>
+    </div>
+    <style>
+    #block-fond{
+        background: url(/img/erreur/fond-erreur-generique.jpg) no-repeat;
+        background-size: cover;
+        height: 516px;
+    }
+    </style>
+{% endblock %}

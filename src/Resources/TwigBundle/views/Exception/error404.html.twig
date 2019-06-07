@@ -1,9 +1,19 @@
 {% extends 'base-erreur.html.twig' %}
 
 {% block body %}
-    <div id="content-404">
-        <h1>Page 404 retourné Trompé de page</h1>
-        <img src="/img/erreur/jungle.gif" alt="image_illustration">
-        <p>Veuillez réessayer ultérieurement ou contactez nous au : 01 48 49 75 10</p>
+    <div id="block-fond">
+        <div class="container">
+            <div id="content-404">
+                <h1 class="text-center text-dark">Oops ! La page à laquelle vous tentez d'accéder n'existe pas.</h1>
+                <a href="{{ path('home') }}" class="btn btn-danger">Revenir à l'accueil</a>
+            </div>
+        </div>
     </div>
+    <style>
+    #block-fond{
+        background: url(/img/erreur/fond-erreur-generique.jpg) no-repeat;
+        background-size: cover;
+        height: 516px;
+    }
+    </style>
 {% endblock %}
