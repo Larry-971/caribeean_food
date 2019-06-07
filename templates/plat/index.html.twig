@@ -37,7 +37,7 @@
                 {# <th>Photo</th> #}
                 <th>Description</th>
                 <th>Prix</th>
-                <th>Publication</th>
+                {# <th>Publication</th> #}
                 <th>actions</th>
             </tr>
         </thead>
@@ -48,7 +48,7 @@
                 <td>{{ plat.Nom }}</td>
                 <td>{{ plat.Description }}</td>
                 <td>{{ plat.Prix }}</td>
-                <td>{{ plat.Publication }}</td>
+                {# <td>{{ plat.Publication }}</td> #}
                 <td>
                     <a class="btn btn-info" href="{{ path('show_plat', {'id': plat.id}) }}">Voir</a>
                     {# Apparait si connecté si ROLE_ADMIN #}

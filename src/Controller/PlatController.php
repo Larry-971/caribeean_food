@@ -91,7 +91,7 @@ class PlatController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
 
             //Message flash pour notification
-            $this->addFlash('success', "Le dessert à été modifié avec succès !");
+            $this->addFlash('success', "Le plat à été modifié avec succès !");
             
             return $this->redirectToRoute('index_plat', [
                 'id' => $plat->getId(),

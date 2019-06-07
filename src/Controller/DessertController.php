@@ -87,8 +87,6 @@ class DessertController extends AbstractController
 
         $form = $this->createForm(DessertType::class, $dessert);
         $form->handleRequest($request);
-
-        dump($dessert);
         
         if ($form->isSubmitted() && $form->isValid()) {
             

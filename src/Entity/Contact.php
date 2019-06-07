@@ -5,9 +5,7 @@ namespace App\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\PlatRepository")
- */
+
 class Contact
 {
 

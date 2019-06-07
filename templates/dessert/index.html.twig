@@ -33,7 +33,7 @@
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Prix</th>
-                <th>Publication</th>
+                {# <th>Publication</th> #}
                 <th>Actions</th>
             </tr>
         </thead>
@@ -44,7 +44,7 @@
                 <td>{{ dessert.Nom }}</td>
                 <td>{{ dessert.Description }}</td>
                 <td>{{ dessert.Prix }} €</td>
-                <td>{{ dessert.Publication }}</td>
+                {# <td>{{ dessert.Publication }}</td> #}
                 <td>
                     <a class="btn btn-info" href="{{ path('show_dessert', {'id': dessert.id}) }}">Voir</a>
                     <a class="btn btn-secondary" href="{{ path('edit_dessert', {'id': dessert.id}) }}">Modifier</a>
