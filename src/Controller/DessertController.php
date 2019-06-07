@@ -107,6 +107,7 @@ class DessertController extends AbstractController
                 $dessert->setPhoto($photoActuel);
             }
 
+            $this->getDoctrine()->getManager()->persist($dessert);
             $this->getDoctrine()->getManager()->flush();
             
             //Message flash pour notification
@@ -120,6 +121,7 @@ class DessertController extends AbstractController
         return $this->render('dessert/edit.html.twig', [
             'dessert' => $dessert,
             'form' => $form->createView(),
+            'photoActuel'=>$photoActuel
         ]);
     }
 

@@ -55,17 +55,25 @@
                     {# {% if is_granted('ROLE_ADMIN') %} #}
                         <a a class="btn btn-secondary" href="{{ path('edit_plat', {'id': plat.id}) }}">Modifier</a>
                     {# {% endif %} #}
-                
+
                 </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
     <a class="btn btn-primary" href="/admin/dessert">Voir les déssert</a>
-
+{# CSS #}
+<style>
+.container{
+    background: #dcdcdc73;
+}
+body{
+    background: url(../../img/plat/fond-plat.jpg);
+    background-color: #f6f6f6;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+</style>
 {% endblock %}

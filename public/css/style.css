@@ -454,3 +454,8 @@ box-shadow: 0 0 0 0 !important;
 textarea {
     resize: none;
 }
+
+/*Erreur 403,404,500*/
+#content-404{
+	margin-top: 150px;
+}

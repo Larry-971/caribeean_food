@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Désolé une erreur s'est produite !{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+            <!-- Bootstrap -->
+            <link rel="stylesheet" type="text/css"  href="/css/bootstrap.css">
+            <link rel="stylesheet" type="text/css" href="/fonts/font-awesome/css/font-awesome.css">
+
+            <!-- Stylesheet
+                ================================================== -->
+            <link rel="stylesheet" type="text/css"  href="/css/style.css">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
+        
+    </head>
+    
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <!-- Navigation
+            ==========================================-->
+        <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+            <div class="container"> 
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="navbar-brand" href="{{ path("home") }}">
+                                <img src="/img/logo.png" alt="logo" width="150px">
+                            </a>
+                        </li>
+                        <li><a href="{{ path("home") }}" class="page-scroll">Accueil</a></li>
+                        <li><a href="{{ path("carte") }}" class="page-scroll">Carte</a></li>
+                        <li><a href="{{ path("a_propos") }}" class="page-scroll">A propos</a></li>
+                        <li><a href="{{ path("reservation") }}" class="page-scroll">Réservation</a></li>
+                        <li><a href="{{ path("contact") }}" class="page-scroll">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse --> 
+            </div>
+        </nav>
+        
+        {% block body %}{% endblock %}
+
+        <div id="footer">
+            <div class="container text-center">
+                <div class="col-md-12" style="margin-top: 10px;">
+                    <p>&copy; 2019 <a href="{{ path("home") }}" rel="nofollow"><b> Caribbean Food</b></a> Tous droit réservé. Réalisé par TELBOIS Larry <a href="{{ path("mentions_legales") }}" rel="nofollow"><b>Mentions légales</b></a></p> 
+                    <div class="social">
+                        <ul>
+                            <li><a href="#caribeeanfood"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#caribeeanfood"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#caribeeanfood"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+            <script type="text/javascript" src="js/contact_me.js"></script> 
+            <script type="text/javascript" src="js/main.js"></script>
+            <script type="text/javascript" src="js/script.js"></script>
+        {% endblock %}
+    </body>
+</html>

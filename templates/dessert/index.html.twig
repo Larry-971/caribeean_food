@@ -34,7 +34,7 @@
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Publication</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -50,14 +50,28 @@
                     <a class="btn btn-secondary" href="{{ path('edit_dessert', {'id': dessert.id}) }}">Modifier</a>
                 </td>
             </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
         {% endfor %}
         </tbody>
     </table>
 
     <a class="btn btn-primary" href="/admin">Voir liste des plats</a>
+{# CSS #}
+<style>
+.container{
+    background: #dcdcdc73;
+}
+h1{
+	font-family: cursive;   
+    color:#d43031;
+}
+body{
+    background: url(../../img/dessert/fond-dessert-back.jpg);
+    background-color: #f6f6f6;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+
+}
+</style>
 
 {% endblock %}

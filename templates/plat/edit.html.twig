@@ -4,17 +4,24 @@
 {% block title %}Modification du plat{% endblock %}
 
 {% block body %}
-    <a href="{{ path('index_plat') }}"><i class="fas fa-arrow-circle-left fa-3x"></i></a> 
-    <br><br>
+    {# {% if is_granted('ROLE_ADMIN') %} #}
+        <a href="{{ path('index_plat') }}"><i class="fas fa-arrow-circle-left fa-3x"></i></a> 
+        <br><br>
 
-    <h1>Modification du plat : {{ plat.Nom }}</h1>
-    <br>
-    <img  class="img-thumbnail mx-auto d-block" src="{{ asset('uploads/' ~ plat.Photo) }} " alt="image_plat" width="200" height="100"> 
-    {# Champs hidden pour validé photo #}
-    {{ form_start(form) }}
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_row(form.Photo) }}
-    {{ form_end(form) }}
-    {# {{ include('plat/_delete_form.html.twig') }} #}
+        <h1>Modification du plat : {{ plat.Nom }}</h1>
+        <br>
+        <img  class="img-thumbnail mx-auto d-block" src="{{ asset('uploads/' ~ plat.Photo) }} " alt="image_plat" width="200" height="100"> 
+        {# Champs hidden pour validé photo #}
+        {{ form_start(form) }}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_row(form.Photo) }}
+        {{ form_end(form) }}
+        {# {{ include('plat/_delete_form.html.twig') }} #}
+    {# {% endif f%} #}
+<style>
+.container{
+    background: #dcdcdc73;
+}
+</style>
 {% endblock %}

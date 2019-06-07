@@ -1,14 +1,34 @@
 {% extends 'base_back.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription membre CaribeeanFood{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <a class="btn btn-block text-white" href="{{ path("home") }}">Retournez vers le site</a>
+    <div class="justify-content-center align-self-center">
+        <br><br><br>
+        <div id="containerForm" class="col-md-7 offset-2">
+        <h1 class="h3 mb-3 font-weight-normal  text-center text-white">Caribeean Food</h1>
+        <h1 class="h3 mb-3 font-weight-normal text-center text-white">Inscription en tant que membre</h1>
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword) }}
+                <button class="btn btn-success btn-block">Enregistrer</button>
+                <br>
+                <a class="text-light" href="{{ path("app_login") }}">Déjà membre ? Connectez vous ici !</a>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
-
-        <button class="btn">Enregistrer</button>
-    {{ form_end(registrationForm) }}
+    <style>
+    body{
+            background-image: url(../img/fond-form-inscription.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    #containerForm{
+        background-color: rgba(0,0,0,0.5) !important;
+        padding: 50px;
+        border-radius: 10px;
+    }
+    </style>
 {% endblock %}

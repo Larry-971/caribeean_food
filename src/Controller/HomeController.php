@@ -70,6 +70,7 @@ class HomeController extends Controller
      * @Route("/reservation", name="reservation")
      */
     public function reservation(){
+        
         return $this->render('home/reservation.html.twig');
     }
 

@@ -4,17 +4,21 @@
 
 {% block body %}
     <a href="{{ path('index_dessert') }}"><i class="fas fa-arrow-circle-left fa-3x"></i></a> 
-    <h1 class="text-center">Ajout d'un nouveau dessert</h1>
+    <h1 class="text-center">Ajouter un nouveau dessert</h1>
 
     {{ include('dessert/_form.html.twig') }}
 
 <style>
-
+.container{
+    background: #dcdcdc73;
+}
 body{
-    background: url(../../img/dessert/dessert01.jpg);
+    background: url(../../img/dessert/fond-dessert-back.jpg);
     background-color: #f6f6f6;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center; 
+
 }
 </style>
 {% endblock %}
