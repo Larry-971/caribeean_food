@@ -9,64 +9,73 @@
             <p><b>
             <span><b>*</b></span>N'attendez pas la dernière minute pour nous contacter, et profitez de notre système de réservation en ligne !!!
             </b></p>
+
+            {% for message in app.flashes('success') %}  
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}                
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+
+            {% if not form.vars.valid %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Désolé votre demande de réservation n'a pas pu être transmis suite à une erreur ! Veuillez réessayez svp.              
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endif %}
+
             <div class="text-center">
             <h1>Reservez votre table</h1>
             <div id="formulaire-reservation">
-                <form method="POST" action="">
+                {{ form_start(form) }}                
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="nom">Nom</label>
-                            <input type="text" class="form-control" placeholder="Entrez votre nom" id="nom" name="nom"  required>
+                            {{ form_row(form.nom)}}                           
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="prenom">Prenom</label>
-                            <input type="text" class="form-control" placeholder="Entrez votre prenom" id="prenom" name="prenom" required>
+                            {{ form_row(form.prenom)}}                                                       
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" placeholder="Entrez votre email" id="email" name="email"  required>
+                            {{ form_row(form.email)}}                               
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="phone">Téléphone</label>
-                            <input type="tel" class="form-control" placeholder="Entrez votre numéro de téléphone" id="prenom" name="phone"  required>
+                            {{ form_row(form.telephone)}}                        
                         </div>
                     </div>
-                    <div class="row">
+                    {# <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="date">Date</label>
-                            <input type="date" class="form-control"id="date" name="date" required>
+                            {{ form_row(form.date)}}                           
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="heure">Heure</label>
-                            <input type="time" class="form-control" id="heure" name="heure"  required>
+                            {{ form_row(form.heure)}}                                               
                         </div>
-                    </div>
+                    </div> #}
                     <div class="row">
-                        <div class="form-group col">
-                            <label for="nombre_convive">Nombre de convives</label>
-                            <select name="convive" required>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>+6</option>
-                            </select>
+                        <div class="form-group col-md-8">
+                            {{ form_row(form.convives)}}                                                
                         </div>
                         <div class="form-group col-md-8">
-                            <label>Message</label>
-                            <textarea style="resize:none;" class="form-control" rows="5" placeholder="Table en terrasse, table ronde, etc..."></textarea>
+                            {{ form_row(form.message)}}                           
+                            {# rows="5" placeholder="Table en terrasse, table ronde, etc..." #}
                         </div>
                     </div>
-                    <button  style="position: relative; right: 12%;"class="btn btn-danger" type="submit" name="reserver">Réseverver</button>
-                </form>
+                    <button  style="position: relative; right: 12%;"class="btn btn-danger" type="submit">Réseverver</button>
+                {{ form_end(form) }}                        
             </div>
             <br>
             <p><b>(<span>*</span>)Réservation minimum 12h avant l'heure d'arrivée au restaurant. Sous réserve de place disponible.</b></p>
         </div>
     </div>
+    <style>
+    .fade {
+      opacity: 1;
+    }
+    </style>
     
 {% endblock %}

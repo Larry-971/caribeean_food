@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Entity\Reservation;
+use App\Form\ReservationType;
 use App\Repository\PlatRepository;
 use App\Repository\DessertRepository;
 use App\Notification\ContactNotification;
@@ -49,7 +51,7 @@ class HomeController extends Controller
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(Request $request):Response{
+    public function contact(Request $request): Response {
 
         /*Donnée du formulaire */
         $contact = new Contact();
@@ -57,11 +59,12 @@ class HomeController extends Controller
         $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                $this->addFlash('success', 'Votre email à bien été envoyé');
-                $this->redirectToRoute('/contact');
+                $this->addFlash('success', "Votre message à bien été transmis ! Nous vous répondrons dans les plus  bref délais.");                
+                return $this->redirectToRoute('contact');
             }
 
         return $this->render('home/contact.html.twig', [
+            'contact' => $contact,
             'form' => $form->createView(),
         ]);
     }
@@ -69,9 +72,22 @@ class HomeController extends Controller
     /**
      * @Route("/reservation", name="reservation")
      */
-    public function reservation(){
+    public function reservation(Request $request): Response {
         
-        return $this->render('home/reservation.html.twig');
+        /*Donnée du formulaire */
+        $reservation = new Reservation();
+        $form = $this->createForm(ReservationType::class, $reservation);
+        $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $this->addFlash('success', "Votre demande de réservation  à bien été envoyée ! Nous vous contacterons prochainement.");                
+                return $this->redirectToRoute('reservation');
+            }
+
+        return $this->render('home/reservation.html.twig', [
+            'reservation' => $reservation,
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
